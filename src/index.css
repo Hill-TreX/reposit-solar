@@ -482,6 +482,16 @@ body.light-theme .hero-footer { color: var(--text-light); }
 body:not(.light-theme) .calculator-section { background: #000; color: #e5dec9; } body:not(.light-theme) .calculator-section::before { background: rgba(229,222,201,.07); } body:not(.light-theme) .calculator-eyebrow { color: #e5dec9; } body:not(.light-theme) .calculator-card { background: #0a0a0a; border-color: rgba(229,222,201,.14); box-shadow: 0 22px 55px rgba(0,0,0,.2); } body:not(.light-theme) .calculator-visual-note { color: rgba(229,222,201,.55); } body:not(.light-theme) .calculator-field input { accent-color: #e5dec9; } body:not(.light-theme) .slider-tick-active { background: #e5dec9; } body:not(.light-theme) .slider-tick-past { background: rgba(229,222,201,.6); } body:not(.light-theme) .slider-tick-future { background: rgba(229,222,201,.25); } body:not(.light-theme) .calculator-result { background: #e5dec9; color: #3e3424; } body:not(.light-theme) .calculator-result::after { border-color: rgba(62,52,36,.23); box-shadow: 0 0 0 22px rgba(62,52,36,.06), 0 0 0 44px rgba(62,52,36,.04); } body:not(.light-theme) .calculator-result-note, body:not(.light-theme) .calculator-cost small, body:not(.light-theme) .calculator-stat span { color: #3e3424; } body:not(.light-theme) .calculator-stat { border-color: rgba(62,52,36,.15); background: rgba(62,52,36,.06); } body:not(.light-theme) .calculator-stat strong, body:not(.light-theme) .calculator-stat strong .animated-counter, body:not(.light-theme) .calculator-stat strong .animated-counter * { color: #3e3424; font-weight: 900; opacity: 1; } body:not(.light-theme) .calculator-cta { color: #e5dec9; background: #3e3424; }
 @media (max-width: 800px) { .calculator-grid { grid-template-columns: 1fr; } .calculator-section { padding-inline: 22px; } }
 @media (max-width: 480px) { .calculator-fields { grid-template-columns: 1fr; gap: 0; } .solar-home-visual { height: 250px; } .calculator-stats { gap: 8px; } .calculator-stat { padding: 13px; } }
+@media (hover: none) and (pointer: coarse) {
+  *, *::before, *::after {
+    cursor: auto !important;
+  }
+  div[style*="position: fixed"][style*="z-index: 9999"],
+  div[style*="position: fixed"][style*="z-index: 99"],
+  div[style*="position: fixed"][style*="pointer-events: none"][style*="will-change: transform"] {
+    display: none !important;
+  }
+}
 .section-row {
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   padding-bottom: 10px; border-bottom: 1px solid currentColor; font-size: 15px;
